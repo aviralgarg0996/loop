@@ -1,0 +1,102 @@
+.virtual-chat-side{
+    border-top: 1px solid #141414;
+    margin-top: 20px;
+    padding-top: 20px;
+    .collab-profile{
+        margin-left: 38px;
+        margin-right: 23px;
+        margin-top:30px;
+        display: flex;
+        align-items: center;
+        img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: -15px;
+        }
+        h1{
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: right;
+            color: #FFFFFF;
+            margin-bottom: 0;
+            margin-left: 20px;
+        }
+    }
+    .chatting-section{
+        height: calc(100vh - 251px)  !important;
+        padding-top: 0 !important;
+        margin-top: 10px !important;
+        position: relative;
+        overflow-x: hidden;
+        .gradiant-chat{
+            height: 128px;
+            width:100%;
+            background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+            position: absolute;
+            top:0;
+        z-index: 99;
+
+        }
+        .no-message {
+            p {
+                display: none;
+            }
+        }
+        .message-box {
+            font-size: 14px !important;
+            .time {
+                font-size: 13px!important;
+                line-height: 16px!important;
+            }
+        }
+        .left-chat{
+            padding:0;
+            .message-box{
+                &:before{
+                    margin-left: 1px !important; 
+                    border-left: 8px solid transparent !important;
+                    border-right: 8px solid transparent !important;
+                    border-bottom: 8px solid #282828 !important;
+                    transform: rotate(-226deg) !important;
+                    left: -11px !important;
+                    bottom: -1px !important;
+                
+                }
+            }
+            .image {
+                width: 32px;
+                margin-right: 13px !important;
+                img{
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+        .right-chat {
+            padding: 0;
+            .message-box {
+                background: #191919!important;
+                &:before {
+                    margin-right: 1px !important;
+                    border-left: 8px solid transparent !important;
+                    border-right: 8px solid transparent !important;
+                    border-bottom: 8px solid #191919 !important;
+                    right: -11px !important;
+                    bottom: -1px !important;
+                
+                }
+            }
+            .image {
+                width: 32px;
+                margin-left: 13px !important;
+                img{
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+   
+}

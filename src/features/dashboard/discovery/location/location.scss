@@ -1,0 +1,319 @@
+.recently {
+    padding-top: 32px;
+    padding-left: 34px;
+    padding-right: 34px;
+    overflow: hidden;
+    .list-card {
+        .play-btn {
+            display: none !important;
+        }
+        &:hover {
+            .play-btn {
+                display: block !important;
+            }
+        }
+    }
+    .row {
+        .col {
+            min-width: 20%;
+        }
+    }
+    .top-head {
+        align-items: baseline;
+        .location-search{
+            margin-left: 100px;
+            width: 33%;
+            position: relative;
+            input{
+                border-radius: 55px;
+                height: 36px;
+                width: 100%;
+                background: transparent !important;
+                border: 1px solid #898989 !important;
+                padding: 10px;
+                color: #fff !important;
+                opacity: 1 !important;
+                font-weight: 500;
+                font-size: 16px;
+                padding-left: 33px;
+                outline: none !important;
+            }
+            .icon-search{
+                color: #898989;
+                position: absolute;
+                top: 10px;
+                left: 15px;
+                font-size: 13px;
+            }
+            .autocomplete-dropdown-container{
+                top: 48px;
+                background-color: hsl(0,0%,100%);
+                border-radius: 4px;
+                box-shadow: none;
+                margin-bottom: 8px;
+                margin-top: 8px;
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+                box-sizing: border-box;
+                background: #2A2A2A !important;
+                border: none;
+                border-radius: 6px !important;
+                border-top-left-radius: 0 !important;
+                border-top-right-radius: 0 !important;
+                margin-top: 0 !important;
+                .suggestion-item{
+                    background: transparent !important;
+                    padding: 4px 10px !important;
+                    color: #898989 !important;
+                    
+                }
+                .suggestion-item--active{
+                    background: transparent !important;
+                    color: #fff !important;
+                    padding: 4px 10px !important;     
+                }
+            }
+            .autocomplete-shadow{
+                box-shadow: 0 0 0 1px hsla(0,0%,0%,0.1), 0 4px 11px hsla(0,0%,0%,0.1);
+            }
+            div[class$="menu"]{
+                width: 100% !important;
+            div[class$="MenuList"]{
+                width: 100% !important;
+                div[class$="NoOptionsMessage"]{
+                    width: 100% !important;
+                    text-align: left !important;
+                }
+            }
+        }
+         
+        }
+        h1 {
+            color: #fff;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 44px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: #616161;
+            margin-bottom: 20px;
+        }
+        display: flex;
+    justify-content: space-between;
+    .search-field{
+        position: relative;
+        input{
+            width: 118px;
+            height: 36px;
+            border: 1px solid #898989;
+            border-radius: 55px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            /* identical to box height */
+            background: transparent;
+            padding-left: 34px;
+            color: #fff;
+            outline: none !important;
+            &::placeholder{
+            color: #898989;
+
+            }
+            
+        }
+        .icon-search{
+            color: #898989;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 13px;
+        }
+    }
+    }
+    .card {
+        margin-right: 0;
+        margin-bottom: 32px;
+        .play-btn {
+            display: none;
+        }
+    }
+    .first-row-col {
+        .card {
+            .play-btn {
+                display: block;
+            }
+        }
+    }
+    //  .last-row{
+    //     .card{
+    //         margin-bottom: 0;
+    //     }
+    //  }
+}
+@media(max-width: 767px) {
+    .recently {
+        margin-right: 15px;
+        .top-head {
+            position: relative;
+            
+            .location-search {
+                margin-left: 10px;
+                width: 318px;
+                position: static;
+                .icon-search{
+                    font-size: 12px;
+                    left: 10px;
+                }
+                input{
+                    font-size: 12px;
+                    padding-left: 24px;
+                    padding-right: 6px;
+                }
+                .autocomplete-dropdown-container{
+                    left: 0;
+                }
+                .search-location-in{
+                    position: relative;
+                }
+            }
+        }
+    }
+    .location-area{
+        height: 350px !important;
+    }
+}
+@media(max-width: 991px) {
+    .recently {
+        padding-left: 16px;
+        padding-right: 0;
+        .top-head {
+            h1 {
+                font-size: 24px;
+                line-height: 29px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+    }
+}
+  
+    .gm-style{
+        .gm-style-iw-c {
+            background: #000;
+            overflow: visible !important;
+            
+        }
+        .gm-style-iw-d {
+            color: #fff;
+            overflow: visible !important;
+            padding-right: 15px;
+            padding-bottom: 13px;
+            padding-left: 2px;
+            min-width: 100px;
+            text-align: center;
+            font-size: 15px;
+            position: relative;
+            padding-top: 22px;
+            text-transform: capitalize;
+             
+        }
+        .gm-style-iw-t::after {
+            background: #000;
+             
+        }
+    }
+    .location-redirect{
+        color: #fff !important;
+        font-weight: 600;
+    } 
+    .loc-prof-img{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: absolute;
+        top: -33px;
+        left: -5px;
+        right:0;
+        margin:auto;
+        background: #eee;
+         
+        img{
+            width: 100%;
+        }
+     }
+     .expertise-name{
+        margin-top: 2px;
+        color: #9E9E9E;
+        display: flex;
+        justify-content: center;
+        font-weight: 400;
+
+     }
+@media(max-width: 500px) {
+    .recently {
+        .row {
+            margin-right: 0;
+            .col {
+                min-width: 50%;
+                max-width: 50%;
+                &:nth-child(odd) {
+                    padding-right: 8px;
+                }
+                &:nth-child(even) {
+                    padding-left: 8px;
+                }
+            }
+        }
+        .card {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+// @media(min-width: 501px) and (max-width: 767px){
+//     .recently{
+//         .row{
+//             .col{
+//                 min-width: 33.33%;
+//                 max-width: 33.33%;
+//             }
+//         }
+//     }
+// }
+@media(min-width: 501px) and (max-width: 1199px) {
+    .recently {
+        padding-right: 16px;
+        .row {
+            .col {
+                min-width: 33.33%;
+                max-width: 33.33%;
+            }
+        }
+    }
+}
+
+.marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    background-color: #000;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    user-select: none;
+    transform: translate(-50%, -50%);
+    &:hover {
+        z-index: 1;
+    }
+}

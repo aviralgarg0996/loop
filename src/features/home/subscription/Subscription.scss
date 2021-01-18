@@ -1,0 +1,182 @@
+.subscription-page {
+    background: #000;
+    .section-1 {
+        background: linear-gradient(1800deg, #1E1E1E 0%, rgba(30, 30, 30, 0) 54.48%), linear-gradient(90deg, rgba(30, 30, 30, 0) 57.75%, #1E1E1E 100%), linear-gradient(180deg, #1E1E1E 0%, rgba(30, 30, 30, 0) 66.79%), url(../../../assets/images/subscription.png);
+        // height: 900px;
+        background-size: cover;
+        padding-top: 178px;
+        padding-bottom: 200px;
+        .left-section {
+            padding: 40px 63px 0 0;
+            h1 {
+                font-style: normal;
+                font-weight: 600;
+                font-size: 72px;
+                line-height: 88px;
+                color: #FFFFFF;
+            }
+            p {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 30px;
+                color: #fff;
+            }
+        }
+        .card {
+            background: #1E1E1E;
+            border: 2px solid #616161;
+            box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            color: #fff;
+            padding: 40px 30px 40px;
+            p {
+                margin-top: 0;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 29px;
+                opacity: 1;
+                color: #FFFFFF;
+            }
+            ul {
+                list-style: none;
+                padding-left: 20px;
+                margin-top: 20px;
+                li {
+                    position: relative;
+                    margin-bottom: 20px;
+                    padding-left: 8px;
+                    &::before {
+                        content: "";
+                        background: url(../../../assets/images/play.svg);
+                        width: 14px;
+                        height: 16px;
+                        position: absolute;
+                        left: -18px;
+                        top: 4px;
+                        background-size: contain;
+                    }
+                }
+            }
+            .free-btn {
+                background: linear-gradient(84.77deg, #00F6B4 0%, #00FF85 100%);
+                border-radius: 5px;
+                position: absolute;
+                top: -17px;
+                left: 30px;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #009250;
+                border: none !important;
+                box-shadow: none !important;
+            }
+            .pro-btn {
+                background: linear-gradient(84.15deg, #2F2BE0 0%, #E64253 119.65%);
+                ;
+                border-radius: 5px;
+                position: absolute;
+                top: -17px;
+                left: 30px;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 17px;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: #fff;
+                border: none !important;
+                box-shadow: none !important;
+            }
+        }
+        .select-sub-btn{
+            width: 240px;
+        }
+    }
+    .section-3 {
+        height: auto;
+        margin-top: 0;
+        h1 {
+            padding-top: 0;
+        }
+    }
+    @media(max-width: 767px) {
+        .section-1 {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url(../../../assets/images/subscription-mobile.png);
+            padding-bottom: 30px;
+            padding-top: 112px;
+            .left-section {
+                padding-top: 0;
+                padding-right: 15px;
+                padding-left: 15px;
+                h1 {
+                    font-size: 48px;
+                }
+                p {
+                    font-size: 20px !important;
+                    margin-bottom: 70px;
+                }
+            }
+        }
+        .section-3 {
+            background-image: none;
+        }
+        .card {
+            margin-bottom: 40px;
+            margin-top: 40px;
+            margin-left: 15px;
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .subscription-page {
+        background-image: url(../../../assets/images/contact-us-mobile.png);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+    .section-1 {
+        padding-top: 112px;
+        .left-section {
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-top: 0;
+            h1 {
+                font-size: 48px !important;
+            }
+            p {
+                font-size: 20px !important;
+            }
+        }
+        .col-md-7 {
+            width: 100%;
+            max-width: 100%;
+            flex: 0 0 100%;
+            margin-top: 30px;
+        }
+    }
+}
+
+@media(min-width: 992px) and (max-width: 1300px) {
+    .section-1 {
+        padding-top: 112px;
+        .left-section {
+            padding-right: 15px;
+            padding-left: 15px;
+            padding-top: 0;
+            h1 {
+                font-size: 68px !important;
+            }
+            p {
+                font-size: 22px !important;
+            }
+        }
+    }
+}

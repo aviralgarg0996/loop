@@ -1,0 +1,302 @@
+.footerInner {
+    min-height: 72px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 34px;
+    padding-right: 34px;
+    position: relative;
+    width: calc(100% - 236px);
+    bottom: 0;
+    background: #141414;
+    overflow: hidden;
+    position: fixed;
+    z-index: 9;
+    .footer-song-profile {
+        display: flex;
+        padding-top: 15px;
+        img {
+            width: 40px;
+            height: 40px;
+            background: #C4C4C4;
+            border-radius: 30px;
+            margin-right: 10px;
+        }
+        h1 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 4px;
+            color: #FFFFFF;
+        }
+        p {
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            color: #9E9E9E;
+            margin: 0;
+        }
+    }
+    .random-btn {
+        position: absolute;
+        top: 26px;
+        left: 0;
+        font-weight: 300;
+        font-size: 14px;
+        color: #9E9E9E;
+    }
+    .rhap_container {
+        background-color: #141414;
+        box-shadow: none;
+        position: relative;
+        padding-right: 109px;
+        outline: none !important;
+        padding-bottom: 0;
+        .rhap_forward-button {
+            outline: none !important;
+            outline: none !important;
+            position: relative;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 14px;
+            color: #9E9E9E;
+            svg {
+                display: none;
+            }
+            &:after {
+                content: "\42";
+                font-family: "untitled-font-1" !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-right: 1px solid #9E9E9E;
+                padding-right: 2px;
+            }
+        }
+        .rhap_rewind-button {
+            outline: none !important;
+            outline: none !important;
+            position: relative;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 14px;
+            color: #9E9E9E;
+            svg {
+                display: none;
+            }
+            &:after {
+                content: "\42";
+                font-family: "untitled-font-1" !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-right: 1px solid #9E9E9E;
+                padding-right: 2px;
+                transform: rotate(180deg);
+            }
+        }
+        .rhap_play-pause-button {
+            outline: none !important;
+            position: relative;
+            font-weight: 300;
+            font-size: 20px;
+            line-height: 20px;
+            color: #00F6B4;
+            svg {
+                display: none;
+            }
+        }
+        .rhap_play-pause-button[aria-label="Play"] {
+            &:after {
+                content: "\42";
+                font-family: "untitled-font-1" !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        .rhap_play-pause-button[aria-label="Pause"] {
+            &:after {
+                content: "\4c";
+                font-family: "untitled-font-1" !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+        .rhap_repeat-button {
+            outline: none !important;
+            position: relative;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 14px;
+            color: #9E9E9E;
+            svg {
+                display: none;
+            }
+            &:after {
+                content: "\49";
+                font-family: "untitled-font-1" !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-size: 14px;
+            }
+        }
+        .rhap_main {
+            flex-direction: row;
+            .rhap_controls-section {
+                justify-content: center;
+                width: 63px;
+            }
+            .rhap_volume-button {
+                outline: none !important;
+                position: relative;
+            }
+            .rhap_volume-button[aria-label="Mute"] {
+                color: #9E9E9E;
+                svg {
+                    display: none;
+                }
+                &:after {
+                    content: "\45";
+                    font-family: "untitled-font-1" !important;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    font-weight: 300;
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+            }
+            .rhap_volume-button[aria-label="Unmute"] {
+                svg {
+                    margin-top: -3px;
+                    margin-left: -5px;
+                }
+            }
+            .rhap_progress-container {
+                outline: none !important;
+                margin-right: 10px;
+            }
+            .rhap_main-controls {
+                padding-top: 8px;
+            }
+            .rhap_time {
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 14px;
+                color: #9E9E9E;
+            }
+            .rhap_progress-bar-show-download {
+                background: #9E9E9E;
+                height: 1px;
+            }
+            .rhap_progress-filled {
+                background: linear-gradient(32.6deg, #00F6B4 0%, #00FF85 100%);
+                border-radius: 24px;
+                height: 3px;
+                margin-top: -1px;
+            }
+            .rhap_progress-indicator {
+                background: linear-gradient(87.14deg, #00F6B4 0%, #00FF85 100%);
+                border-radius: 24px;
+                width: 9px;
+                height: 9px;
+                top: -4px;
+                margin-left: -7px;
+            }
+            .rhap_progress-section {
+                padding-right: 15px;
+                &:first-child {
+                    order: 2;
+                }
+            }
+            .rhap_volume-controls {
+                position: absolute;
+                right: 0;
+                width: 100px;
+            }
+            .rhap_additional-controls {
+                width: 32px;
+                flex: 0;
+                order: 3;
+            }
+            .rhap_volume-bar-area {
+                outline: none !important;
+                margin-top: -8px;
+            }
+            .rhap_volume-bar {
+                background: linear-gradient(32.6deg, #00F6B4 0%, #00FF85 100%);
+                height: 3px;
+            }
+            .rhap_volume-bar-area .rhap_volume-indicator {
+                background: linear-gradient(87.14deg, #00F6B4 0%, #00FF85 100%);
+                border-radius: 24px;
+                width: 9px;
+                height: 9px;
+                top: -3px;
+                margin-left: -7px;
+            }
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    .footerInner {
+        width:100%;
+        overflow: hidden;
+        height: auto !important;
+        padding-bottom: 15px;
+        position: absolute;
+        position: fixed;
+        bottom: 61px;
+        .row {
+            flex-wrap: nowrap;
+            .col-lg-9 {
+                width: 59px;
+                padding-right: 0;
+            }
+        }
+        .rhap_main {
+            .rhap_volume-controls {
+                display: none;
+            }
+            .rhap_progress-section {
+                display: none;
+            }
+            .rhap_forward-button {
+                display: none;
+            }
+            .rhap_rewind-button {
+                display: none;
+            }
+            .rhap_repeat-button {
+                display: none;
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+    .footerInner {
+        .rhap_container {
+            padding-right: 0;
+        }
+    }
+}
+
+@media(min-width: 992px) and (max-width: 1300px) {
+    .rhap_progress-section {
+        flex: 2 !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .footerInner {
+        .footer-song-profile {
+            h1 {
+                font-size: 14px;
+            }
+        }
+    }
+}

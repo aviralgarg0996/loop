@@ -1,0 +1,126 @@
+.recommended {
+    padding-top: 32px;
+    padding-left: 34px;
+    padding-right: 34px;
+    overflow: hidden;
+    .list-card {
+        .play-btn {
+            display: none !important;
+        }
+        &:hover {
+            .play-btn {
+                display: block !important;
+            }
+        }
+    }
+    .row {
+        .col {
+            min-width: 20%;
+            max-width: 20%;
+            margin-bottom: 32px;
+        }
+    }
+    .top-head {
+        h1 {
+            color: #fff;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 36px;
+            line-height: 44px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            color: #616161;
+            margin-bottom: 20px;
+        }
+    }
+    .card {
+        margin-right: 0;
+        height: 100%;
+        margin-bottom: 0;
+        .play-btn {
+            display: none;
+        }
+    }
+    .first-row-col {
+        .card {
+            .play-btn {
+                display: block;
+            }
+        }
+    }
+    //  .last-row{
+    //     .card{
+    //         margin-bottom: 0;
+    //     }
+    //  }
+}
+
+@media(max-width: 991px) {
+    .recommended {
+        padding-left: 16px;
+        padding-right: 0;
+        .top-head {
+            h1 {
+                font-size: 24px;
+                line-height: 29px;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+    }
+}
+
+@media(max-width: 500px) {
+    .recommended {
+        .row {
+            margin-right: 0;
+            .col {
+                min-width: 50%;
+                max-width: 50%;
+                &:nth-child(odd) {
+                    padding-right: 8px;
+                }
+                &:nth-child(even) {
+                    padding-left: 8px;
+                }
+            }
+        }
+        .card {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+// @media(min-width: 501px) and (max-width: 767px) {
+//     .recommended {
+//         .row {
+//             .col {
+//                 min-width: 33.33%;
+//                 max-width: 33.33%;
+//             }
+//         }
+//     }
+// }
+@media(min-width: 501px) and (max-width: 1199px) {
+    .recommended {
+        padding-right: 16px;
+        .row {
+            .col {
+                min-width: 33.33%;
+                max-width: 33.33%;
+            }
+        }
+    }
+}
+@media(max-width: 767px) { 
+    .recommended .row .col{
+        margin-bottom: 15px;
+    }
+}

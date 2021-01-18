@@ -1,0 +1,263 @@
+    .feeling-random {
+        // background: url('../../../assets/images/random-bg.svg');
+        // height: 100vh;
+        .list-card {
+            .play-btn {
+                display: none !important;
+            }
+            &:hover {
+                .play-btn {
+                    display: block !important;
+                }
+            }
+        }
+        .top-section {
+            margin-bottom: -130px !important;
+        }
+        .bottom-section {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        h1 {
+            font-weight: 600;
+            font-size: 48px;
+            line-height: 59px;
+            color: #FFFFFF;
+            padding-top: 50px;
+        }
+        p {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            text-align: center;
+            color: #616161;
+        }
+        .button-btnGradiant {
+            width: 215px;
+            height: 56px;
+            margin: auto;
+            font-weight: 500 !important;
+            margin-top: 25px;
+            position: relative;
+            z-index: 1;
+            i {
+                margin-right: 10px;
+            }
+        }
+        .small-pointer {
+            position: absolute;
+            cursor: pointer;
+            img {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+            }
+        }
+        .small-pointer1 {
+            bottom: 55%;
+            left: 15%;
+        }
+        .small-pointer2 {
+            bottom: 10%;
+            left: 10%;
+        }
+        .small-pointer3 {
+            bottom: 10%;
+            right: 10%;
+        }
+        .small-pointer4 {
+            bottom: 7%;
+            left: 30%;
+        }
+        .small-pointer5 {
+            bottom: 10%;
+            right: 40%;
+        }
+        .pointer {
+            position: absolute;
+            width: 97px;
+            height: 169px;
+            cursor: pointer;
+            z-index: 1;
+            img {
+                &:first-child {
+                    width: 96px;
+                    height: 96px;
+                    border-radius: 50%;
+                    margin-bottom: -10px;
+                }
+            }
+            .hover-text {
+                background: #000000;
+                box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+                border-radius: 5px;
+                width: 155px;
+                padding: 10px;
+                position: absolute;
+                top: 15px;
+                right: -143px;
+                z-index: 0;
+                padding-left: 25px;
+                display: none;
+                p {
+                    font-size: 14px;
+                    text-align: left;
+                    margin-bottom: 0;
+                    &:nth-child(1) {
+                        font-size: 16px;
+                        color: #FFFFFF;
+                        font-weight: 600;
+                    }
+                    &:nth-child(2) {
+                        font-size: 12px;
+                        color: #9E9E9E;
+                    }
+                }
+            }
+            &:hover {
+                .hover-text {
+                    display: block;
+                }
+            }
+            .profile-img {
+                position: absolute;
+                top: 0;
+                z-index: 999999;
+            }
+            .pointer-icon {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                z-index: -1;
+            }
+        }
+        .pointer1 {
+            bottom: 45%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+        }
+        .pointer2 {
+            bottom: 30%;
+            right: 15%;
+            margin: auto;
+            text-align: center;
+        }
+        .pointer3 {
+            bottom: 18%;
+            left: 18%;
+            margin: auto;
+            text-align: center;
+        }
+        .pointer4 {
+            bottom: 15%;
+            left: 35%;
+            margin: auto;
+            text-align: center;
+        }
+        .pointer5 {
+            bottom: 15%;
+            right: 30%;
+            margin: auto;
+            text-align: center;
+        }
+    }
+    
+    .p-relative {
+        position: relative;
+    }
+    
+    .right-section {
+        .dashboard-inner {
+            .feeling-random {
+                height: 100vh;
+            }
+        }
+    }
+    
+    .globemobile {
+        display: none;
+    }
+    
+    @media (max-width: 767px) {
+        .feeling-random {
+            h1 {
+                font-size: 32px;
+                line-height: 39px;
+                padding-top: 48px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 17px;
+            }
+            .button-btnGradiant {
+                font-size: 14px;
+            }
+            .pointer1,
+            .pointer2,
+            .pointer5 {
+                display: none;
+            }
+            .pointer3 {
+                bottom: initial;
+                top: 15%;
+            }
+            .pointer4 {
+                bottom: 3%;
+                left: 52%;
+            }
+            .small-pointer1 {
+                display: none;
+            }
+            .small-pointer2 {
+                bottom: 37%;
+                left: 8%;
+            }
+            .small-pointer4 {
+                left: 7%;
+            }
+            .small-pointer3 {
+                right: 3%;
+            }
+            .small-pointer5 {
+                bottom: 48%;
+                right: 9%;
+            }
+        }
+        .globemobile {
+            display: block;
+        }
+        .globedesktop {
+            display: none;
+        }
+    }
+    
+    @media (max-height: 750px) {
+        .right-section {
+            .dashboard-inner {
+                .feeling-random {
+                    height: 124vh;
+                }
+            }
+        }
+    }
+    
+    @media (min-height: 751px) and (max-height: 900px) {
+        .right-section {
+            .dashboard-inner {
+                .feeling-random {
+                    height: 105vh;
+                }
+            }
+        }
+    }
+    
+    @media (min-width: 1850px) {
+        .globedesktop {
+            transform: translate(-4%, 25%);
+            width: 108%!important;
+        }
+    }

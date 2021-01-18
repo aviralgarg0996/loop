@@ -1,0 +1,128 @@
+.background-overlay{
+    background: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    left: 0;
+    z-index: 1;
+}
+.your-network{
+    z-index:9999;
+    .gradiant-border{
+        height: 7px;
+        background: linear-gradient(87.14deg, #2F2BE0 0%, #E64253 100%);
+        border-top-left-radius: 5px;
+      
+      }
+}
+.network-peoples{
+    height: 470px;
+    overflow: auto;
+}
+.your-network-card {
+    background: #000000;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    .head {
+        padding: 0 24px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+            color: #FFFFFF;
+            margin-bottom: 0;
+        }
+        p {
+            margin-bottom: 0;
+            color: #FFFFFF;
+            opacity: 0.6;
+            font-size: 14px;
+        }
+        .arrow-right {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #00F6B4;
+            color: #00F6B4;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+            &:hover {
+                background: #00F6B4;
+                border-color: #00F6B4;
+                color: #000000;
+            }
+        }
+    }
+    .audioCard {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        margin-right: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+        background: #000000;
+        border-radius: 0;
+        padding-top: 0 !important;
+        padding-bottom: 10px !important;
+        color: #fff;
+        padding-left: 24px;
+        padding-right: 24px;
+        cursor: pointer;
+        img {
+            width: 58px !important;
+            height: 58px !important;
+            border-radius: 50%;
+        }
+        h1 {
+            font-size: 18px !important;
+            font-weight: 500;
+            line-height: 19px;
+            margin-bottom: 5px;
+        }
+        p {
+            margin-bottom: 0;
+            line-height: 14px;
+            color: #9E9E9E;
+            margin-bottom: 0;
+            font-size: 14px !important;
+        }
+        .status-custom {
+            font-size: 10px;
+            width: 42px;
+            text-align: center;
+            line-height: 12px;
+            &::after {
+                left: -4px;
+                top: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .your-network-card {
+        .audioCard,
+        .head {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+    }
+}
+@media(min-width: 768px){
+    .networks-name {
+        width: 110px;
+    }
+}

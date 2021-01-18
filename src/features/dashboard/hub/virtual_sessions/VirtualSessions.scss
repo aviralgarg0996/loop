@@ -1,0 +1,285 @@
+.chat-top-mobile {
+    display: none;
+}
+
+.virtual-chat {
+    position: relative;
+    height: calc(100vh - 70px);
+    .w-100 {
+        width: 100%;
+    }
+    .image-virtual {
+        position: absolute;
+        img {
+            border-radius: 16px;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            width: 48px;
+            height: 4px;
+            background: #FFFFFF;
+            border-radius: 4px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+    .image-virtual.img1 {
+        top: 94px;
+        left: 117px;
+        width: 160px;
+        height: 160px;
+    }
+    .image-virtual.img2 {
+        width: 240px;
+        height: 240px;
+        top: 24px;
+        right: 24px;
+    }
+    .image-virtual.img3 {
+        width: 240px;
+        height: 240px;
+        bottom: 184px;
+        left: 24px;
+    }
+    .image-virtual.img4 {
+        width: 200px;
+        height: 200px;
+        bottom: 260px;
+        right: 22%;
+    }
+    .image-virtual.img5 {
+        width: 160px;
+        height: 160px;
+        bottom: 4px;
+        right: 24px;
+    }
+    .active-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: 400px;
+        height: 400px;
+        img {
+            border-radius: 16px;
+            border: 1px solid #00F6B4;
+        }
+        .chat-audio {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 116px;
+            .line {
+                width: 48px;
+                height: 4px;
+                background: #000000;
+                border-radius: 4px;
+                margin: auto;
+                margin-bottom: 21px;
+            }
+        }
+    }
+    i {
+        width: 48px;
+        height: 48px;
+        background: #000000;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        font-size: 20px;
+        color: #9E9E9E;
+        padding-top: 11px;
+        margin: 0 5px 7px;
+    }
+    .icon-close {
+        color: #F63E37;
+        font-size: 18px;
+        padding-top: 14px;
+    }
+    .icons-section {
+        width: 272px;
+        background: #2A2A2A;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 4px;
+        left: 24px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        text-align: center;
+        color: #9E9E9E;
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 1700px) {
+    .virtual-chat {
+        .image-virtual.img4 {
+            bottom: 28%;
+            right: 12%;
+        }
+        .image-virtual.img3,
+        .image-virtual.img2,
+        .image-virtual.img4 {
+            width: 160px;
+            height: 160px;
+        }
+        .image-virtual.img1 {
+            top: 50px;
+        }
+        .active-img {
+            width: 300px;
+            height: 300px;
+        }
+    }
+}
+
+@media(max-width: 1199px) {
+    .virtual-chat {
+        .active-img {
+            width: 200px;
+            height: 200px;
+        }
+        .image-virtual.img3,
+        .image-virtual.img4,
+        .image-virtual.img5 {
+            width: 120px;
+            height: 120px;
+        }
+        .image-virtual.img1 {
+            left: 16px;
+            top: 24px
+        }
+        .image-virtual.img3 {
+            bottom: 140px;
+        }
+    }
+}
+
+@media(max-width: 991px) {
+    .chat-top-mobile {
+        display: flex;
+        margin: 0;
+        padding: 18px 18px;
+        border-width: 0;
+        justify-content: space-between;
+        align-items: center;
+        border-width: 0;
+        .collab-profile {
+            margin: 0px;
+        }
+        .go-back {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #898989;
+            background: transparent;
+            border-radius: 100%;
+            color: #898989;
+            text-align: center;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            &:hover {
+                background: #00F6B4;
+                border-color: #00F6B4;
+                color: #000000;
+            }
+            .icon-arrow-right {
+                transform: rotate(180deg);
+                display: inherit;
+            }
+        }
+    }
+    .sidebar {
+        .go-back,
+        .collab-profile {
+            display: none;
+        }
+    }
+    .mobile-sidebar.VirtualSidebar {
+        .header-footer {
+            position: fixed;
+        }
+        .chatting-section {
+            height: calc(100vh - 135px) !important;
+        }
+    }
+    .virtual-chat {
+        height: 120vh;
+        .image-virtual.img1,
+        .image-virtual.img2,
+        .image-virtual.img3,
+        .image-virtual.img4 {
+            width: 120px;
+            height: 120px;
+            // position: static;
+        }
+        .image-virtual.img5 {
+            display: none;
+        }
+        .icons-section {
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 24px;
+        }
+        .image-virtual.img4 {
+            right: 24px;
+        }
+        .image-virtual.img1 {
+            top: 76px;
+        }
+        .image-virtual.img2 {
+            top: 98px;
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .virtual-chat {
+        // height: 100vh;
+        .active-img {
+            height: 240px;
+            width: 240px;
+            transform: translateY(-39px);
+        }
+        .image-virtual.img2,
+        .image-virtual.img4 {
+            width: 80px;
+            height: 80px;
+        }
+        .image-virtual.img4 {
+            bottom: 195px;
+        }
+        .image-virtual.img3 {
+            bottom: 165px;
+        }
+    }
+    .virtual-chat-side {
+        .collab-profile {
+            img {
+                width: 30px;
+                height: 30px;
+            }
+            h1 {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+@media(height: 568px) {
+    .virtual-chat {
+        height: 145vh;
+    }
+}

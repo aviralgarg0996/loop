@@ -1,0 +1,163 @@
+.home-page{
+    background: #1E1E1E;
+    .section-1{
+        background: linear-gradient(180deg, rgba(30, 30, 30, 0) 55.41%, #1E1E1E 100%), linear-gradient(180deg, #1E1E1E 0%, rgba(30, 30, 30, 0) 46.83%), linear-gradient(236.31deg, rgba(30, 30, 30, 0) 46.06%, #1E1E1E 84.59%), linear-gradient(123.75deg, #1E1E1E 15.4%, rgba(30, 30, 30, 0) 45.36%), url(../../../assets/images/home-bg1.png);
+        height:auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-bottom: 280px;
+        h1{
+            font-size: 72px;
+            margin-bottom: 30px;
+            img{
+                margin-right: 20px;
+                margin-top: -10px;
+            }
+            &:nth-child(1){
+                margin-top: 137px;
+            }
+            &:nth-child(2){
+                color:#00F6B4;
+                display: flex;
+                align-items: baseline;
+            }
+        }
+        .overlay-gradiant{
+            background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(190, 21, 0, 0) 100%);
+            mix-blend-mode: overlay;
+            opacity: 0.6;
+            position: absolute;
+            width: 677px;
+            height: 50%;
+            left: 0;
+            top: 0;
+            right:0;
+            bottom:0;
+            margin:auto;
+        }
+    }
+    .section-2.section-2-bg{
+            background: linear-gradient(180deg, rgba(30, 30, 30, 0) 73.24%, #1E1E1E 100%), linear-gradient(180deg, #1E1E1E 0%, rgba(30, 30, 30, 0) 26.99%), linear-gradient(236.29deg, #1E1E1E 15.4%, rgba(30, 30, 30, 0) 65.4%), linear-gradient(236.29deg, #1E1E1E 15.4%, rgba(30, 30, 30, 0) 65.4%), url(../../../assets/images/home-bg2.jpg);
+            height: auto;
+            padding-bottom: 140px;
+            background-size: cover;
+            color: #fff;
+            background-repeat: no-repeat;
+            .heading{
+                font-size: 56px;
+                margin-bottom: 20px;
+            }
+            
+             
+            .bottom-text{
+                img{
+                    margin-right: 10px;
+                }
+                font-size: 24px;
+                text-transform: uppercase;
+                color: #00F6B4;
+                display: flex;
+            }
+            .about-row{
+                justify-content: flex-end;
+            }
+        }
+        .section-3{
+            margin-top: 0;
+            height: auto;
+            h1{
+                padding-top: 90px;
+            }
+            form{
+                padding-bottom: 144px;
+            }
+            .footer-contact{
+               
+                position: relative;
+                .footer {
+                    position: absolute;
+                    bottom: 0;
+                    padding-bottom: 20px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+
+.be-the-first-btn{
+    width: 354px;
+}
+.social-icon{
+    cursor: pointer;
+    &:hover{
+        color: #00F6B4;
+    }
+}
+@media(max-width: 767px){
+    .home-page {
+        // overflow: hidden;
+        .section-1 {
+            height: auto;
+            padding-bottom: 0;
+            margin-bottom: -150px;
+            h1 {
+                font-size: 48px;
+                margin-bottom: 10px;
+                &:nth-child(1) {
+                    margin-top: 70px;
+                }
+                img{
+                    width: 24px;
+                }
+            }
+            .overlay-gradiant{
+                display: none;
+            }
+        }
+        .section-3 {
+            .mr-30 {
+                margin-right: 10px!important;
+            }
+            .ml-30 {
+                margin-left: 10px!important;
+            }
+        }
+        .section-2.section-2-bg {
+            padding-bottom: 70px;
+
+                .heading{
+                    font-size: 36px;
+                }
+                p{
+                    font-size: 14px;
+                }
+                .p-1{
+                    font-size: 18px !important;
+                }
+                .bottom-text{
+                    img{
+                        width:36px;
+                    }
+                    font-size: 16px;
+                }
+            }
+            .postion-img2{
+                width: 86px !important;
+                left: 0;
+                bottom: -3%;
+            }
+        }
+        
+    }
+
+
+@media(min-width: 768px) and (max-width: 991px) { 
+    .home-page {
+        .section-1{
+            height: auto;
+            padding-bottom: 150px;
+             
+        }
+    }
+}

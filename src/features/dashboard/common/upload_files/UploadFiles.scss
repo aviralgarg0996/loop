@@ -1,0 +1,50 @@
+.upload-devicebtn{
+    position: absolute;
+    right: 16px;
+    bottom: 17px;
+}
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputfile + label {
+    width: 188px;
+    height: 32px;
+    margin: auto;
+    border: 1px solid #00F6B4;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 9px;
+    background: transparent;
+    border-radius: 54px;
+    margin-top: 15px;
+    display: flex;
+    color: #00F6B4;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    .icon-share{
+        transform: rotate(-90deg);
+        margin-right: 7px;
+        font-size: 13px;
+    }
+    &:hover {
+        background: linear-gradient(87.91deg, #00F6B4 14.64%, #00FF85 100.89%)!important;
+        color: #000;
+        border-color: #000!important;
+    }
+
+}
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    margin-right: 0.25em;
+}
+ 

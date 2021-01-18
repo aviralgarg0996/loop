@@ -1,0 +1,237 @@
+.how-work-page{
+    background: #1E1E1E;
+
+    .section-1{
+       background: linear-gradient(90deg, #1E1E1E 0%, rgba(30, 30, 30, 0) 29.78%), linear-gradient(180deg, rgba(30, 30, 30, 0) 57.75%, #1E1E1E 100%), linear-gradient(180deg, #1E1E1E 0%, rgba(30, 30, 30, 0) 66.79%), url(../../../assets/images/how-work-bg1.png);
+       mix-blend-mode: normal;
+       background-size: cover;
+        background-repeat: no-repeat;
+        height: 697px;
+        min-height: 697px;
+        h1{
+            font-size: 72px;
+            margin-bottom: 30px;
+            margin-top: 125px;
+        }
+        .image-dashboard{
+            position: absolute;
+            right: 0;
+            width: 670px;
+        }
+         p{
+             font-size: 30px;
+         }
+            
+        
+    }
+    .section-2{
+            background: linear-gradient(180deg, rgba(30, 30, 30, 0) 0%, #1E1E1E 100%), linear-gradient(180deg, #1E1E1E 0%, rgba(30, 30, 30, 0) 100%), url(../../../assets/images/how-work-bg2.png);
+            padding-bottom: 140px;
+            background-size: cover;
+            color: #fff;
+            background-repeat: no-repeat;
+            .left-section{
+                min-height: 450px;
+            }
+            h1{
+                font-size: 56px;
+                margin-bottom: 20px;
+            }
+            p{
+                font-size: 18px;
+                font-weight: 300;
+            }
+            .p-1{
+                font-size: 24px !important;
+            }
+            .bottom-text{
+                img{
+                    margin-right: 10px;
+                }
+                font-size: 24px;
+                text-transform: uppercase;
+                color: #00F6B4;
+                display: flex;
+            }
+            .postion-img{
+                position: absolute;
+                width: 433px !important;
+                right: -14%;
+                bottom: -9%
+            }
+            .postion-img2{
+                position: absolute;
+                width: 170px !important;
+                left: -5%;
+                bottom: -15%;
+            }
+            .list{
+                list-style: none;
+                padding: 0;
+                li{
+                    display: flex;
+                    margin-bottom: 15px;
+                    align-items: center;
+                    font-size: 18px;
+                    font-weight: 500;
+                    img{
+                        margin-right: 10px;
+                    }
+                    &:last-child{
+                        align-items: end;
+                        img{
+                            margin-top: 5px;
+                        }
+                        span{
+                            span{
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+        
+    }
+    .footer {
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 13px;
+            margin-bottom: 0;
+            margin-top: 10px;
+            color: #fff;
+            opacity: 0.6;
+        }
+    }
+}
+
+@media(max-width: 767px){
+    .how-work-page {
+        // overflow: hidden;
+        .section-1 {
+            .image-dashboard{
+                width: 100%;
+                position: relative;
+                margin-top:40px;
+            }
+            height: auto;
+            padding-bottom: 38px;
+            min-height: auto;
+            p{
+                font-size: 20px;
+            }
+            h1 {
+                font-size: 48px !important;
+                margin-bottom: 0px;
+                margin-top: 100px;
+            }
+        }
+        .section-2 {
+            height: auto;
+            padding-bottom: 75px;
+
+            .left-section{
+                min-height: auto;;
+            }
+            .right-text{
+                padding-top:0;
+            }
+            P{
+                font-size: 14px;
+            }
+            .list {
+                li{ 
+                    font-size: 14px;   
+               }
+            }
+            .p-1{
+                font-size: 18px !important;
+            }
+            .postion-img {
+                width: 219px !important;
+                right: 0;
+                bottom: -14px;            
+            }
+            .mobile-order{
+                order: 2;
+            }
+            .postion-img2{
+                width: 86px !important;
+                left: 0;
+                bottom: -3%;
+            }
+        }
+        .m-150{
+            margin-top: 30px !important;
+        }
+    }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+    .how-work-page {
+        .section-1 {
+            min-height: 500px;
+            height: 500px;
+            h1{
+                font-size: 52px;
+                margin-top: 71px;
+            }
+            .image-dashboard{
+                width: 400px;
+            }
+        }
+        .section-2 {
+            .postion-img {
+                width: 233px !important;
+                right: -5%;
+                top: 23%;
+            }
+            .postion-img2 {
+                width: 120px !important;
+                left: -5%;
+                top: 30%;
+            }
+        }
+    }
+
+}
+@media(min-width: 992px) and (max-width: 1322px) {
+    .how-work-page {
+        .section-1 {
+            .image-dashboard {
+                width: 510px !important;
+            }
+        }
+    }
+}
+
+@media(min-width: 1360px) and (max-width: 1440px) {
+    .how-work-page {
+        .section-1 {
+            .image-dashboard{
+                right: -100px;
+            }
+        }
+    }
+
+}
+@media(min-width: 1078px) and (max-width: 1360px) {
+    .how-work-page {
+        .section-1 {
+            .image-dashboard{
+                right: -50px;
+            }
+        }
+    }
+
+}
+@media(min-width: 992px) and (max-width: 1077px) {
+    .how-work-page {
+        .section-1 {
+            .image-dashboard{
+                right: 0;
+            }
+        }
+    }
+
+}
