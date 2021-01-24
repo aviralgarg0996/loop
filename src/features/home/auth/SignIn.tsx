@@ -46,7 +46,7 @@ class SignIn extends React.Component<Props, State> {
         if (!(_.isEmpty(email) && _.isEmpty(password))) {
             this.props.login(email, password).then((response) => {
                 toast('Successfully Logged in');
-                if (response && !response.full_name && !response.last_name && !response.image) {
+                if (!response?.data?.first_name || !response?.data?.last_name || !response?.data?.photo) {
                     this.props.history.replace('/hub/edit-profile');
                 }
                 else {
@@ -56,6 +56,7 @@ class SignIn extends React.Component<Props, State> {
                 }
             })
                 .catch((error) => {
+                    console.log({error})
                     toast('Login failed')
                 });
         }

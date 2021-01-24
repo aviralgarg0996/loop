@@ -86,8 +86,8 @@ const ConversationList = (props: any) => {
         lastMessage: lastEvent.text
           ? lastEvent.text
           : lastEvent.payload &&
-            lastEvent.payload[0] &&
-            lastEvent.payload[0]['name'],
+          lastEvent.payload[0] &&
+          lastEvent.payload[0]['name'],
         timestamp: lastEvent.timestamp,
       };
     }
@@ -332,10 +332,10 @@ class SideBar extends React.Component<IProps, IState> {
                     >
                       <div className="profile-section d-flex">
                         <div className="proifleImg">
-                          <img
-                            src={userDetail.photo || profile}
+                          {userDetail.photo ? <img
+                            src={userDetail.photo}
                             alt="profile"
-                          />
+                          /> : <div style={{ backgroundColor: 'white', width: 56, height: 56, borderRadius: 30 }} />}
                         </div>
                         <div className="profileText">
                           <div className="mobile-online">
@@ -379,10 +379,10 @@ class SideBar extends React.Component<IProps, IState> {
                   >
                     <div className="profile-section d-flex">
                       <div className="proifleImg">
-                        <img
+                        {userDetail && userDetail.photo ? <img
                           src={(userDetail && userDetail.photo) || profile}
                           alt="profile"
-                        />
+                        /> : <div style={{ backgroundColor: 'white', width: 56, height: 56, borderRadius: 30 }} />}
                       </div>
                       <div className="profileText">
                         <div className="mobile-online">
@@ -496,8 +496,8 @@ class SideBar extends React.Component<IProps, IState> {
                                   </li>
                                 ))
                               ) : (
-                                <></>
-                              )}
+                                  <></>
+                                )}
                             </div>
                           </li>
                         </>
@@ -532,14 +532,14 @@ class SideBar extends React.Component<IProps, IState> {
 
             {this.props.history.location.pathname ===
               '/hub/chat/collaborators-chat' && (
-              <ConversationList
-                goBack={this.goBack}
-                getUserDetail={this.getUserDetail}
-                activeUId={activeUId}
-                newConversations={this.newConversations}
-                {...this.props}
-              />
-            )}
+                <ConversationList
+                  goBack={this.goBack}
+                  getUserDetail={this.getUserDetail}
+                  activeUId={activeUId}
+                  newConversations={this.newConversations}
+                  {...this.props}
+                />
+              )}
             {window.location.hash.split('/')[3] != 'virtual-sessions' && (
               <AuthFooter />
             )}

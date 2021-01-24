@@ -6,7 +6,9 @@ import rocketLaunch from '../../../assets/images/icons/rocket-launch.svg'
 import ContactFooter from '../../../layouts/contact_footer/ContactFooter';
 import { homeData } from '../../../redux/home/action'
 import { connect } from 'react-redux';
- 
+import * as Scroll from 'react-scroll';
+var scroll    = Scroll.animateScroll;
+
 interface IProps {
     homeData: any,
     homeTitleData: any
@@ -37,7 +39,9 @@ render() {
                             <h1>{data && data.home_section_1_title_1}</h1>
                             <h1><img alt=''src={play} />{data && data.home_section_1_title_2}</h1>
                             <h1>{data && data.home_section_1_title_3}</h1>
-                            <Button className="button-btnGradiant be-the-first-btn mt-5">{data && data.home_section_1_header_button_text}</Button>
+                            <Button 
+                            onClick={()=>scroll.scrollToBottom()}
+                            className="button-btnGradiant be-the-first-btn mt-5">Try The Beta</Button>
                         </Col>
                     </Row>
                     <div className="overlay-gradiant">

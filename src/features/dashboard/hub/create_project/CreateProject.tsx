@@ -30,8 +30,8 @@ import { myNetwork } from '../../../../redux/network/action';
 import {
   createProject,
   projectById,
-	updatePoject,
-	createProjectInit,
+  updatePoject,
+  createProjectInit,
 } from '../../../../redux/project/action';
 import { connect } from 'react-redux';
 import { History } from 'history';
@@ -52,28 +52,32 @@ class CreateProject extends React.Component<IProps, IState> {
 
   componentWillMount() {
     const { id } = this.props.match.params;
-		this.props.myNetwork();
-		if (id) {
-			this.props.projectById(id);
-		}
+    this.props.myNetwork();
+    if (id) {
+      this.props.projectById(id);
+    }
   }
 
   componentWillReceiveProps(nextProps: any) {
     if (!_.isEqual(this.props.projectDetail, nextProps.projectDetail)) {
-			const data = nextProps.projectDetail;
+      const data = nextProps.projectDetail;
       this.setState({
-				name: data.name,
-				description: data.description,
-			});
-		}
-		
-		const { id } = this.props.match.params;
-		if (!_.isEqual(id, nextProps.match.params.id) && !nextProps.match.params.id) {
-			this.props.createProjectInit()
-		}
+        name: data.name,
+        description: data.description,
+      });
+    }
+
+    const { id } = this.props.match.params;
+    if (!_.isEqual(id, nextProps.match.params.id) && !nextProps.match.params.id) {
+      this.props.createProjectInit()
+    }
   }
 
-  toggle = () => {
+  toggle = (data: any) => {
+    if (data === 'close') {
+      this.setState({ modal: !this.state.modal });
+      return
+    }
     if (!this.state.modal) {
       this.setState({
         coverFile: undefined,
@@ -81,7 +85,10 @@ class CreateProject extends React.Component<IProps, IState> {
         modal: !this.state.modal,
       });
     } else {
-      this.setState({ modal: !this.state.modal });
+      if (this.state.coverFile && this.state.cover_image)
+        this.setState({ modal: !this.state.modal });
+      else
+        toast.error('Please provide cover picture');
     }
   };
 
@@ -119,8 +126,11 @@ class CreateProject extends React.Component<IProps, IState> {
       voice_memos_files.push(data.fileName);
       toast('Files added successfully');
       this.setState({ voice_memos_title, voice_memos_files, voiceFiles });
+      this.toggleFile();
     }
-    this.toggleFile();
+    else{
+      toast('Please select file')
+    }
   };
 
   trackModalClosed = (data: TrackFileType | null) => {
@@ -200,8 +210,8 @@ class CreateProject extends React.Component<IProps, IState> {
       this.setState({ selecetedMem });
       toast('Collaborator removed successfully');
     }
-	};
-	
+  };
+
   removeFile = (index: number) => {
     let { voiceFiles, voice_memos_title, voice_memos_files } = this.state;
     if (voiceFiles && voice_memos_title && voice_memos_files) {
@@ -214,27 +224,27 @@ class CreateProject extends React.Component<IProps, IState> {
   };
 
   createProject = (e: any) => {
-		const { id } = this.props.match.params;
-		
+    const { id } = this.props.match.params;
+
     if (id) {
       e.preventDefault();
       let { name, description, coverFile } = this.state;
       if (!name) {
         toast.error('Please provide project name');
         return;
-			}
-			
+      }
+
       if (!description) {
         toast.error('Please provide project description');
         return;
-			}
-			
+      }
+
       if (name && description) {
         let data = {
           project_id: id,
           name,
           description,
-          ...({coverFile: coverFile && coverFile[0]} || {}),
+          ...({ coverFile: coverFile && coverFile[0] } || {}),
         };
         this.props
           .updatePoject(data)
@@ -249,7 +259,7 @@ class CreateProject extends React.Component<IProps, IState> {
           });
       } else {
         toast('All fields reqiured');
-			}
+      }
 
     } else {
       e.preventDefault();
@@ -343,7 +353,7 @@ class CreateProject extends React.Component<IProps, IState> {
         <ToastContainer />
         <Row className="m-0">
           <Col md="8">
-            <h1>{ !id ? 'Create Project': 'Update Project'}</h1>
+            <h1>{!id ? 'Create Project' : 'Update Project'}</h1>
             <div className="uploadPhoto">
               <div className="dummy">
                 <img
@@ -396,7 +406,7 @@ class CreateProject extends React.Component<IProps, IState> {
                     type="textarea"
                     name="cardnumber"
                     id="cardid"
-										value={description ? description : ''}
+                    value={description ? description : ''}
                     onChange={event =>
                       this.inputHandler('description', event.target.value)
                     }
@@ -408,22 +418,73 @@ class CreateProject extends React.Component<IProps, IState> {
                 </FormGroup>
               </div>
               {!id && <>
-              <div className="input-area">
-                <h2>Upload Files:</h2>
-                <p>Upload audio files, voice memos, documents and more</p>
-                <Button className="add-btn" onClick={this.toggleFile}>
-                  <i className="icon-upload-file" /> Upload File
+                <div className="input-area">
+                  <h2>Upload Files:</h2>
+                  <p>Upload audio files, voice memos, documents and more</p>
+                  <Button className="add-btn" onClick={this.toggleFile}>
+                    <i className="icon-upload-file" /> Upload File
                 </Button>
-                {voice_memos_title && voice_memos_title.length > 0 && (
-                  <Card className="project-detail-card project-file-lists">
-                    <CardBody>
-                      <Table>
-                        {voice_memos_title &&
-                          voice_memos_title.map(
-                            (item: string, index: number) => (
+                  {voice_memos_title && voice_memos_title.length > 0 && (
+                    <Card className="project-detail-card project-file-lists">
+                      <CardBody>
+                        <Table>
+                          {voice_memos_title &&
+                            voice_memos_title.map(
+                              (item: string, index: number) => (
+                                <tr>
+                                  <td>
+                                    <i className="icon-file-alt" /> {item}
+                                  </td>
+                                  <td className="date-td">
+                                    {/* {Util.getFormattedDateTZ(item.create_time)} */}{' '}
+                                    {new Date()
+                                      .toISOString()
+                                      .replace(/T.*/, '')
+                                      .split('-')
+                                      .reverse()
+                                      .join('-')}
+                                  </td>
+                                  <td
+                                    className="delete-td"
+                                    onClick={() => this.removeFile(index)}
+                                  >
+                                    <span>
+                                      <i className="icon-delete" /> Delete
+                                  </span>
+                                  </td>
+                                </tr>
+                              )
+                            )}
+                        </Table>
+                      </CardBody>
+                    </Card>
+                  )}
+                  {/* { voice_memos_title && voice_memos_title.map((item : string, index: number) => (
+                                    <div className="project-file-lists">
+                                        <i className="icon-file-alt"></i> <span> { item }</span>
+                                        <span onClick={()=> this.removeFile(index)} >  <i className="icon-delete"></i> Delete</span>
+                                    </div>
+                                )) } */}
+                </div>
+
+                <div className="input-area">
+                  <h2>Upload Tracks:</h2>
+                  <p>
+                    Any reference tracks or demos you want to upload to this
+                    project?
+                </p>
+                  <Button className="add-btn" onClick={this.toggleTrack}>
+                    <i className="icon-play" /> Upload Track
+                </Button>
+                  {tracks_title && tracks_title.length > 0 && (
+                    <Card className="project-detail-card project-file-lists">
+                      <CardBody>
+                        <Table>
+                          {tracks_title &&
+                            tracks_title.map((item: string, index: number) => (
                               <tr>
                                 <td>
-                                  <i className="icon-file-alt" /> {item}
+                                  <i className="icon-file-audio" /> {item}
                                 </td>
                                 <td className="date-td">
                                   {/* {Util.getFormattedDateTZ(item.create_time)} */}{' '}
@@ -436,124 +497,73 @@ class CreateProject extends React.Component<IProps, IState> {
                                 </td>
                                 <td
                                   className="delete-td"
-                                  onClick={() => this.removeFile(index)}
+                                  onClick={() => this.removeTrack(index)}
                                 >
                                   <span>
                                     <i className="icon-delete" /> Delete
-                                  </span>
+                                </span>
                                 </td>
                               </tr>
-                            )
-                          )}
-                      </Table>
-                    </CardBody>
-                  </Card>
-                )}
-                {/* { voice_memos_title && voice_memos_title.map((item : string, index: number) => (
-                                    <div className="project-file-lists">
-                                        <i className="icon-file-alt"></i> <span> { item }</span>
-                                        <span onClick={()=> this.removeFile(index)} >  <i className="icon-delete"></i> Delete</span>
-                                    </div>
-                                )) } */}
-              </div>
-
-              <div className="input-area">
-                <h2>Upload Tracks:</h2>
-                <p>
-                  Any reference tracks or demos you want to upload to this
-                  project?
-                </p>
-                <Button className="add-btn" onClick={this.toggleTrack}>
-                  <i className="icon-play" /> Upload Track
-                </Button>
-                {tracks_title && tracks_title.length > 0 && (
-                  <Card className="project-detail-card project-file-lists">
-                    <CardBody>
-                      <Table>
-                        {tracks_title &&
-                          tracks_title.map((item: string, index: number) => (
-                            <tr>
-                              <td>
-                                <i className="icon-file-audio" /> {item}
-                              </td>
-                              <td className="date-td">
-                                {/* {Util.getFormattedDateTZ(item.create_time)} */}{' '}
-                                {new Date()
-                                  .toISOString()
-                                  .replace(/T.*/, '')
-                                  .split('-')
-                                  .reverse()
-                                  .join('-')}
-                              </td>
-                              <td
-                                className="delete-td"
-                                onClick={() => this.removeTrack(index)}
-                              >
-                                <span>
-                                  <i className="icon-delete" /> Delete
-                                </span>
-                              </td>
-                            </tr>
-                          ))}
-                      </Table>
-                    </CardBody>
-                  </Card>
-                )}
-                {/* { tracks_title && tracks_title.map((item : string, index: number) => (
+                            ))}
+                        </Table>
+                      </CardBody>
+                    </Card>
+                  )}
+                  {/* { tracks_title && tracks_title.map((item : string, index: number) => (
                                     <div>
                                         <span> { item }</span>
                                         <span onClick={()=> this.removeTrack(index)} >  remove</span>
                                     </div>
                                 )) } */}
-              </div>
+                </div>
 
-              <div className="input-area">
-                <h2>Add Collaborators:</h2>
-                <p>Add others you’d like to work on this project with you</p>
-                <Button
-                  className="add-btn"
-                  onClick={this.toggleAddCollaborators}
-                >
-                  <i className="icon-add-user" /> Add Collaborators
+                <div className="input-area">
+                  <h2>Add Collaborators:</h2>
+                  <p>Add others you’d like to work on this project with you</p>
+                  <Button
+                    className="add-btn"
+                    onClick={this.toggleAddCollaborators}
+                  >
+                    <i className="icon-add-user" /> Add Collaborators
                 </Button>
-                <table className="table collab-tbl">
-                  {selecetedMem &&
-                    selecetedMem.map((item: string, index: number) => {
-                      let connection = networkList.find(
-                        (user: any) => user.user_id == item
-                      );
+                  <table className="table collab-tbl">
+                    {selecetedMem &&
+                      selecetedMem.map((item: string, index: number) => {
+                        let connection = networkList.find(
+                          (user: any) => user.user_id == item
+                        );
 
-                      return (
-                        <tr>
-                          <td>
-                            <img src={connection.photo} />
-                          </td>
-                          <td>{`${connection.first_name ||
-                            ''} ${connection.last_name || ''}`}</td>
-                          <td>
-                            {connection.expertise &&
-                              connection.expertise
-                                .map((item: any) => item && item.name)
-                                .join(' | ')}
-                          </td>
-                          <td>
-                            {connection.genre &&
-                              connection.genre
-                                .map((item: any) => item && item.name)
-                                .join(' | ')}
-                          </td>
-                          <td>
-                            <span
-                              onClick={() => this.removeCollaborator(index)}
-                            >
-                              <i className="icon-delete" /> Delete
+                        return (
+                          <tr>
+                            <td>
+                              <img src={connection.photo} />
+                            </td>
+                            <td>{`${connection.first_name ||
+                              ''} ${connection.last_name || ''}`}</td>
+                            <td>
+                              {connection.expertise &&
+                                connection.expertise
+                                  .map((item: any) => item && item.name)
+                                  .join(' | ')}
+                            </td>
+                            <td>
+                              {connection.genre &&
+                                connection.genre
+                                  .map((item: any) => item && item.name)
+                                  .join(' | ')}
+                            </td>
+                            <td>
+                              <span
+                                onClick={() => this.removeCollaborator(index)}
+                              >
+                                <i className="icon-delete" /> Delete
                             </span>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                </table>
-              </div>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                  </table>
+                </div>
               </>}
               <Button
                 className="button-btnGradiant save-btn"
@@ -568,10 +578,10 @@ class CreateProject extends React.Component<IProps, IState> {
 
         <Modal
           isOpen={modal}
-          toggle={this.toggle}
+          toggle={() => this.toggle("close")}
           className="add-to-netwok-modal upload-modal"
         >
-          <ModalHeader toggle={this.toggle}> </ModalHeader>
+          <ModalHeader toggle={() => this.toggle("close")}> </ModalHeader>
           <ModalBody>
             <h2>Add a photo to your project</h2>
             <p className="pg-1">Get creative, add artwork for your project</p>
@@ -635,8 +645,8 @@ interface IProps {
   myNetwork: () => Promise<any>;
   createProject: (data: any) => Promise<any>;
   updatePoject: (data: any) => Promise<any>;
-	projectById: (id: string) => Promise<any>;
-	createProjectInit: () => Promise<any>;
+  projectById: (id: string) => Promise<any>;
+  createProjectInit: () => Promise<any>;
   history: History;
   projectDetail: any;
   match: any;
@@ -668,8 +678,8 @@ const mapDispatchToProps = {
   myNetwork,
   createProject,
   updatePoject,
-	projectById,
-	createProjectInit,
+  projectById,
+  createProjectInit,
 };
 
 const mapStateToProps = (state: any) => {

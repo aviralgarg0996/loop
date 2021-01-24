@@ -297,7 +297,7 @@ class EditProfile extends React.Component<IProps, State> {
         userDetail.social_profile_link = userDetail.social_profile_link && userDetail.social_profile_link.filter((id: string) => id.trim() != "")
         
         if(userDetail.first_name && userDetail.location &&
-             userDetail.genre_id && userDetail.genre_id.length > 0 &&  userDetail.area_of_expertise_id && userDetail.area_of_expertise_id.length > 0 &&  userDetail.social_profile_link && userDetail.social_profile_link.length > 0 && userDetailProp && userDetailProp.demo_track && userDetailProp.demo_track.length > 0 ){
+             userDetail.genre_id && userDetail.genre_id.length > 0 &&  userDetail.area_of_expertise_id && userDetail.area_of_expertise_id.length > 0 ){
                 this.setState({error: undefined})
                 this.props.editProfile && this.props.editProfile(this.state.userDetail).then((res) => {
                     this.props.getProfile && this.props.getProfile();
@@ -328,18 +328,18 @@ class EditProfile extends React.Component<IProps, State> {
                 toast.error("Please add location");
                 return;
             }
-            if(!userDetail.description){
-                toast.error("Please add description");
-                return;
-            }
-            if(!userDetail.credits){
-                toast.error("Please add credits");
-                return;
-            }
-            if(!userDetailProp.demo_track || (userDetailProp.demo_track && userDetailProp.demo_track.length == 0)){
-                toast.error("Please add atleast one track");
-                return;
-            }
+            // if(!userDetail.description){
+            //     toast.error("Please add description");
+            //     return;
+            // }
+            // if(!userDetail.credits){
+            //     toast.error("Please add credits");
+            //     return;
+            // }
+            // if(!userDetailProp.demo_track || (userDetailProp.demo_track && userDetailProp.demo_track.length == 0)){
+            //     toast.error("Please add atleast one track");
+            //     return;
+            // }
             // toast.error("All fields required");
             return;
         }
@@ -785,7 +785,9 @@ class EditProfile extends React.Component<IProps, State> {
                                     <p>Tell the LOOP Community a bit about yourself</p>
                                     <Input type="textarea" name="description" id="cardid" onChange={this.inputHandler} 
                                     placeholder="My work explores the relationship between multiculturalism and romance tourism. With influencers as diverse as Machiavelli and Andy Warhol, new letiations are created from both orderly and random textures." 
-                                    value={userDetail.description} className={ _.isEmpty(userDetail.description) && error ? "border-error" : ""} />
+                                    value={userDetail.description} 
+                                    className={ _.isEmpty(userDetail.description) && error ? "border-error" : ""} 
+                                    />
                                     {/* <span className="edit-btn"><i className="icon-edit2"></i>Edit</span> */}
                                 </FormGroup>
                             </div>

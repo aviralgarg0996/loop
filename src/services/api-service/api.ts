@@ -11,7 +11,7 @@ const API = () =>{
 
    let axiosClient =  axios.create(
     {
-      baseURL: `http://loop-server.orbiqon.com/public/`,
+      baseURL: `https://loop-server.orbiqon.com/public/`,
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}`, }
     },
   );

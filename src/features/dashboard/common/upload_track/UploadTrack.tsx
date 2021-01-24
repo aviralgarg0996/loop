@@ -2,6 +2,8 @@ import React, { useState, useEffect }  from 'react';
 import { Modal, ModalHeader, ModalBody, Button, FormGroup, Label, Input } from 'reactstrap';
 import './UploadTrack.scss'
 import cover from '../../../../assets/images/cover.svg';
+import { ToastContainer, toast } from 'react-toastify';
+
 // import { getAudioDurationInSeconds } from 'get-audio-duration';
 
 interface UploadTrackProps  {
@@ -60,12 +62,14 @@ const UploadTrack = (props: UploadTrackProps) => {
             }
             props.onClose && props.onClose(data);
         }else{
+            toast.error('Please Upload Track Details');
 
         }
     }
 
     return(
         <Modal isOpen={props.modalTrack} toggle={props.toggleTrack}  className="add-to-netwok-modal upload-modal track-modal">
+                    <ToastContainer />
             <ModalHeader toggle={props.toggleTrack}> </ModalHeader>
             <ModalBody>
                 <h2>Upload Tracks</h2>
